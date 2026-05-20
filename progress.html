@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Progress Bar</title>
+    <style>
+        body { background: #020406; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .bar-container { width: 300px; background: #161b22; border-radius: 10px; border: 1px solid #21262d; padding: 4px; }
+        .bar { width: 0%; height: 15px; background: linear-gradient(90deg, #238636, #56d364); border-radius: 8px; transition: width 0.1s ease; }
+    </style>
+</head>
+<body>
+<div class="bar-container"><div class="bar" id="myBar"></div></div>
+<script>
+    let w = 0;
+    const interval = setInterval(() => {
+        w += 2; document.getElementById('myBar').style.width = w + '%';
+        if(w >= 100) clearInterval(interval);
+    }, 50);
+</script>
+</body>
+</html>
